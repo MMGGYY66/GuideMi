@@ -59,13 +59,13 @@ public class PlaceDetailsActivity extends AppCompatActivity {
 
         //Get the properties of the Place Object from the intent
         Bundle b = getIntent().getExtras();
-        String placeName = b.getString("placeName");
-        String placeAddress = b.getString("placeAddress");
-        String placeDescription = b.getString("placeDescription");
-        int placeImage = b.getInt("placeImage");
-        final int placeAudio = b.getInt("placeAudio");
-        final String placeSite = b.getString("placeSite");
-        final String placeLocation = b.getString("placeLocation");
+        String placeName = b.getString(getString(R.string.name_var));
+        String placeAddress = b.getString(getString(R.string.address_var));
+        String placeDescription = b.getString(getString(R.string.desc_var));
+        int placeImage = b.getInt(getString(R.string.img_var));
+        final int placeAudio = b.getInt(getString(R.string.audio_var));
+        final String placeSite = b.getString(getString(R.string.site_var));
+        final String placeLocation = b.getString(getString(R.string.loc_var));
 
         //Set the name of the place as the title of the screen
         this.setTitle(placeName);

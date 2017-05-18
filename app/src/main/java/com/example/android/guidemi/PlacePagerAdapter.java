@@ -29,8 +29,11 @@ public class PlacePagerAdapter extends FragmentPagerAdapter {
         else if (position == 1){
             return new RestaurantsFragment();
         }
-        else{
+        else if (position == 2){
             return new MuseumsFragment();
+        }
+        else{
+            return new CoffeeFragment();
         }
     }
 
@@ -38,7 +41,7 @@ public class PlacePagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
 
         //Returns the number of items of the Viewpager
-        return 3;
+        return 4;
     }
 
     @Override
@@ -50,8 +53,11 @@ public class PlacePagerAdapter extends FragmentPagerAdapter {
         else if (position == 1){
             return mContext.getString(R.string.restaurants);
         }
-        else {
+        else if (position == 2){
             return mContext.getString(R.string.museums);
+        }
+        else {
+            return mContext.getString(R.string.coffee);
         }
     }
 }

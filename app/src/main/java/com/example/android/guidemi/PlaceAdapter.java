@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class PlaceAdapter extends ArrayAdapter<Place> {
 
-    Context context = getContext();
+    private Context context = getContext();
 
     public PlaceAdapter(Activity context, ArrayList<Place> places) {
         super(context, 0, places);
@@ -63,13 +63,14 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         final Intent itemIntent = new Intent(context, PlaceDetailsActivity.class);
 
         //Put the properties of the Object to the intent
-        itemIntent.putExtra("placeName", name);
-        itemIntent.putExtra("placeAddress", address);
-        itemIntent.putExtra("placeDescription", description);
-        itemIntent.putExtra("placeImage", imageID);
-        itemIntent.putExtra("placeAudio", audioID);
-        itemIntent.putExtra("placeSite", siteURL);
-        itemIntent.putExtra("placeLocation", location);
+        itemIntent.putExtra(context.getString(R.string.name_var), name);
+        itemIntent.putExtra(context.getString(R.string.address_var), address);
+        itemIntent.putExtra(context.getString(R.string.desc_var), description);
+        itemIntent.putExtra(context.getString(R.string.img_var), imageID);
+        itemIntent.putExtra(context.getString(R.string.audio_var), audioID);
+        itemIntent.putExtra(context.getString(R.string.site_var), siteURL);
+        itemIntent.putExtra(context.getString(R.string.loc_var), location);
+
 
         //Start the intent if the user taps on the list item
         listItemView.setOnClickListener(new View.OnClickListener() {
